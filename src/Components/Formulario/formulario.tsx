@@ -4,6 +4,7 @@ import Button from '../Button/button'
 import {useState} from "react"
 interface FormularioProps{
     clients: Clients
+    Onclick?: () => void
 }
 
 export default function Formulario(props : FormularioProps){
@@ -22,7 +23,7 @@ export default function Formulario(props : FormularioProps){
             <Button cor='blue' ClassName='mr-2'>
                 {id ? 'Altera' : 'Salvar'}
             </Button>
-            <Button cor='gray'>
+            <Button  Onclick={props.Onclick} cor='gray'>
                 Cancelar
             </Button>
         </div>
