@@ -27,7 +27,7 @@ console.log(client.id)
           <Button cor='blue' ClassName='mb-4'>Novo cliente</Button>
         </div>
         <Table clients={clientes} clientSelecionado={clientSelecionado}  clientExcluido={clientExcluido}/>
-        <Formulario/>
+        <Formulario clients={clientes[0]} />
       </Layout>
     </div>
   )
