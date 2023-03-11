@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ES2015",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
+    "strictNullChecks":false,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
@@ -19,6 +20,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/icons/icons.tsx"],
   "exclude": ["node_modules"]
 }
