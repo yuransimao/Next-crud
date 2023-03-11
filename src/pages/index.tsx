@@ -22,6 +22,9 @@ export default function Home() {
   function clientExcluido(client: Clients) {
     console.log(client.id)
   }
+  function  ClientMudo(client: Clients) {
+    console.log(client)
+  }
 
   return (
     <div className={`flex justify-center items-center h-screen bg-gradient-to-r from-blue-500 to-purple-500 text-white`}>
@@ -33,7 +36,7 @@ export default function Home() {
        </div>
        <Table clients={clientes} clientSelecionado={clientSelecionado} clientExcluido={clientExcluido} />
        </>
-      ): <Formulario Onclick={() => setVisivel('table')} clients={clientes[0]} />}
+      ): <Formulario  ClientMudo={ClientMudo} Cancelado={() => setVisivel('table')} clients={clientes[0]} />}
        
         
       </Layout>

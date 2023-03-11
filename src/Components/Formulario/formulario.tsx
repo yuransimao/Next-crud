@@ -4,7 +4,8 @@ import Button from '../Button/button'
 import {useState} from "react"
 interface FormularioProps{
     clients: Clients
-    Onclick?: () => void
+    Cancelado?: () => void
+    ClientMudo?: (clients: Clients) => void
 }
 
 export default function Formulario(props : FormularioProps){
@@ -20,10 +21,11 @@ export default function Formulario(props : FormularioProps){
 
         <div className={'flex justify-end mt-7'}>
 
-            <Button cor='blue' ClassName='mr-2'>
+            <Button cor='blue' ClassName='mr-2' Onclick={ () => props.ClientMudo?.(new Clients(name , +Age, id))}>
                 {id ? 'Altera' : 'Salvar'}
+                
             </Button>
-            <Button  Onclick={props.Onclick} cor='gray'>
+            <Button  Onclick={props.Cancelado} cor='gray'>
                 Cancelar
             </Button>
         </div>
