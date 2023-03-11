@@ -17,7 +17,7 @@ export default function Table ( props : propsTable){
         console.log(props.clients)
         return props.clients?.map((clients, index) =>{
             return(
-                <tr key={clients.id}>
+                <tr key={clients.id} className={`${index % 2 === 0 ? 'bg-purple-200' : 'bg-purple-100'}`}>
                     <td className='text-left p-4'>{clients.id}</td>
                     <td className='text-left p-4'>{clients.name}</td>
                     <td className='text-left p-4'>{clients.age}</td>
