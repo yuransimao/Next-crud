@@ -6,7 +6,7 @@ interface FormularioProps{
 export default function Formulario(props : FormularioProps){
     return(
         <div>
-        <Inputs/>
+        <Inputs text='Name' value='text' />
         </div>
     )
 }

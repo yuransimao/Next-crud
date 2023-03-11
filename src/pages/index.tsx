@@ -1,6 +1,7 @@
 import Layout from "../Components/Layout/Layout"
 import Table from "../Components/Table/table"
 import Button from "../Components/Button/button"
+import Formulario from "../Components/Formulario/formulario"
 import Clients from "../Core/Clients/Client"
 export default function Home() {
   
@@ -26,6 +27,7 @@ console.log(client.id)
           <Button cor='blue' ClassName='mb-4'>Novo cliente</Button>
         </div>
         <Table clients={clientes} clientSelecionado={clientSelecionado}  clientExcluido={clientExcluido}/>
+        <Formulario/>
       </Layout>
     </div>
   )

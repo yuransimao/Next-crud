@@ -1,14 +1,17 @@
 interface Inputprops{
-    type: 'text' | 'number'
+    type?: 'text' | 'number'
     text: string
-    value: number
+    value: any
+    somenteLeitura?:boolean
 }
 
 export default function Inputs(props : Inputprops){
     return(
-        <div>
+        <div className={`flex flex-col`}>
             <label>{props.text}</label>
-            <input type={`${props.type ?? 'text'}`}/>
+            <input type={props.type ?? 'text'} value={props.value} readOnly={props.somenteLeitura}
+            className={'border border-purple-500 rounded-lg focus:outline-none'}
+            />
         </div>
     )
 }
