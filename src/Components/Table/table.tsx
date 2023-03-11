@@ -14,6 +14,7 @@ export default function Table ( props : propsTable){
         )
     }
     function RenderizarBody(){
+        console.log(props.clients)
         return props.clients?.map((clients, index) =>{
             return(
                 <tr key={clients.id}>
