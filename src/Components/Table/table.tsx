@@ -6,10 +6,10 @@ export default function Table ( props : propsTable){
 
     function RenderizarCabecario(){
         return(
-            <tr>
-            <th>Código</th>
-            <th>Name</th>
-            <th>age</th>
+            <tr >
+            <th className='text-left p-4'>Código</th>
+            <th className='text-left p-4'>Name</th>
+            <th className='text-left p-4'>Age</th>
         </tr>
         )
     }
@@ -18,17 +18,17 @@ export default function Table ( props : propsTable){
         return props.clients?.map((clients, index) =>{
             return(
                 <tr key={clients.id}>
-                    <td>{clients.id}</td>
-                    <td>{clients.name}</td>
-                    <td>{clients.age}</td>
+                    <td className='text-left p-4'>{clients.id}</td>
+                    <td className='text-left p-4'>{clients.name}</td>
+                    <td className='text-left p-4'>{clients.age}</td>
                 </tr>
             )
         })
         
     }
     return(
-        <table>
-           <thead>{RenderizarCabecario()}</thead>
+        <table className={'w-full rounded-xl overflow-hidden'}>
+           <thead className={`text-gray-100 bg-gradient-to-r from-purple-500 to-purple-800`}>{RenderizarCabecario()}</thead>
            <tbody>{RenderizarBody()}</tbody>
         </table>
     )
