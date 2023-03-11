@@ -1,5 +1,6 @@
 import Layout from "../Components/Layout/Layout"
 import Table from "../Components/Table/table"
+import Button from "../Components/Button/button"
 import Clients from "../Core/Clients/Client"
 export default function Home() {
   
@@ -21,6 +22,9 @@ console.log(client.id)
   return (
     <div className={`flex justify-center items-center h-screen bg-gradient-to-r from-blue-500 to-purple-500 text-white`}>
       <Layout title={'Cadastro Simples'}>
+        <div className={'flex justify-end'}>
+          <Button cor='blue' ClassName='mb-4'>Novo cliente</Button>
+        </div>
         <Table clients={clientes} clientSelecionado={clientSelecionado}  clientExcluido={clientExcluido}/>
       </Layout>
     </div>
