@@ -3,24 +3,27 @@ import ClientRepositorio from "../Core/ClientR/clientRe"
 import  ColecaoClient from "../Backend/Db/ColecaoClient"
 import { useState, useEffect } from "react"
 
+import Visible from "./useVisivel"
+
 
 export default function Clientes(){
 
     const repo: ClientRepositorio = new ColecaoClient()
     const [cliente, setCliente] = useState<Clients>(Clients.vazio())
     const [clientes, setClientes] = useState<Clients[]>([])
-    const [visivel, setVisivel] = useState<'table' | 'form' >('table')
+    
+    const {exibirTabela, exibirForm, tableVisivel} = Visible()
     useEffect(obeterTodos,[])
 
   function obeterTodos(){
     repo.obeterTodos().then(clients =>{
       setClientes(clients)
-      setVisivel('table')
+      exibirTabela()
     })
   }
   function clientSelecionado(client: Clients) {
     setCliente(client)
-    setVisivel('form')
+    exibirForm()
     
   }
   async function clientExcluido(client: Clients) {
@@ -35,14 +38,15 @@ export default function Clientes(){
   function  NovoClient() {
     
     setCliente(Clients.vazio())
-    setVisivel('form')
+    exibirForm()
 
   }
 
   return{
     clientSelecionado, NovoClient,
     SalvarClient,clientExcluido,
-    cliente,clientes,visivel,setVisivel
+    cliente,clientes,tableVisivel,exibirTabela
+
   }
 
     

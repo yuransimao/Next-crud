@@ -10,20 +10,21 @@ export default function Home() {
 
   const{ clientSelecionado, NovoClient,
     SalvarClient,clientExcluido,
-    cliente,clientes,visivel,setVisivel}=Clientes()
+    cliente,clientes,
+    tableVisivel, exibirTabela}=Clientes()
  
 
   return (
     <div className={`flex justify-center items-center h-screen bg-gradient-to-r from-blue-700 to-blue-800 text-white`}>
       <Layout title={'Cadastro Simples'}>
-      {visivel === 'table' ? (
+      {tableVisivel  ? (
         <>
          <div className={'flex justify-end'}>
          <Button Onclick={NovoClient}cor='blue' ClassName='mb-4'>Novo cliente</Button>
        </div>
        <Table clients={clientes} clientSelecionado={clientSelecionado} clientExcluido={clientExcluido} />
        </>
-      ): <Formulario  ClientMudo={SalvarClient} Cancelado={() => setVisivel('table')} clients={cliente} />}
+      ): <Formulario  ClientMudo={SalvarClient} Cancelado={() => exibirTabela()} clients={cliente} />}
        
         
       </Layout>

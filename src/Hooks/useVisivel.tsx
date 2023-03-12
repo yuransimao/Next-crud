@@ -1,4 +1,5 @@
 import { useState } from "react"
+
 export default function Visible(){
     const [visivel, setVisivel] = useState<'table' | 'form' >('table')
     const exibirTabela = () => setVisivel('table')
