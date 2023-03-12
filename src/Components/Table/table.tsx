@@ -25,7 +25,7 @@ export default function Table(props: propsTable) {
     //Renderizar tbody
 
     function RenderizarBody() {
-        console.log(props.clients)
+        
         return props.clients?.map((clients, index) => {
             return (
                 <tr key={clients.id} className={`${index % 2 === 0 ? 'bg-purple-200' : 'bg-purple-100'}`}>
