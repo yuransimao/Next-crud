@@ -15,9 +15,9 @@ export default function Formulario(props : FormularioProps){
     const [Age, setAge] = useState( props.clients?.age ?? 0)
     return(
         <div>
+        <InputFile/>
         {id ? (<Inputs ClassName='mb-5' text='Codigo' value={id} somenteLeitura/> ):false}
 
-        <InputFile/>
         <Inputs text='Name' ClassName='mb-5' value={name} valorMudou={setName} />
         <Inputs text='Age' type='number' value={Age} valorMudou={setAge} />
 
