@@ -26,7 +26,7 @@ export default function Formulario(props : FormularioProps){
 
         <div className={'flex justify-end mt-7'}>
 
-            <Button cor='blue' ClassName='mr-2' Onclick={ () => props.ClientMudo?.(new Clients(name , +Age, img.name,id))}>
+            <Button cor='blue' ClassName='mr-2' Onclick={ () => props.ClientMudo?.(new Clients(name , +Age, img,id))}>
                 {id ? 'Altera' : 'Salvar'}
                 
             </Button>
