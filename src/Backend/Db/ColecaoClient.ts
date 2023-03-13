@@ -9,12 +9,13 @@ export default class ColecaoClient implements ClientRepositorio{
         toFirestore(clientes : Clients){
             return{
                 name : clientes.name,
-                age: clientes.age 
+                age: clientes.age,
+                img: clientes.img
             }
         },
         fromFirestore(snapshot : firebase.firestore.QueryDocumentSnapshot, options : firebase.firestore.SnapshotOptions){
             const dados = snapshot.data(options)
-            return new Clients(dados.name,  dados.age , snapshot.id)
+            return new Clients(dados.name,  dados.age , dados.img, snapshot.id)
 
         }
     }
