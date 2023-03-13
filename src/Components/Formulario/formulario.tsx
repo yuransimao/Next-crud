@@ -1,5 +1,6 @@
 import Clients from "../../Core/Clients/Client"
 import Inputs from "./inputs"
+import InputFile from "./inputFile"
 import Button from '../Button/button'
 import {useState} from "react"
 interface FormularioProps{
@@ -16,6 +17,7 @@ export default function Formulario(props : FormularioProps){
         <div>
         {id ? (<Inputs ClassName='mb-5' text='Codigo' value={id} somenteLeitura/> ):false}
 
+        <InputFile/>
         <Inputs text='Name' ClassName='mb-5' value={name} valorMudou={setName} />
         <Inputs text='Age' type='number' value={Age} valorMudou={setAge} />
 
