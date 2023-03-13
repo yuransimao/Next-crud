@@ -13,6 +13,7 @@ export default function InputFile(props: Inputprops){
     const loadingFile = ()=>{
         input.current.click()
     }
+   
     
 
     return(

@@ -14,6 +14,8 @@ export default function Formulario(props : FormularioProps){
     const [name, setName] = useState( props.clients?.name ?? '')
     const [Age, setAge] = useState( props.clients?.age ?? 0)
     const [img, setImg] = useState( props.clients?.img ?? '')
+
+    console.log(img)
     return(
         <div>
         <InputFile img={img} valorMudou={setImg}/>
@@ -24,7 +26,7 @@ export default function Formulario(props : FormularioProps){
 
         <div className={'flex justify-end mt-7'}>
 
-            <Button cor='blue' ClassName='mr-2' Onclick={ () => props.ClientMudo?.(new Clients(name , +Age, id))}>
+            <Button cor='blue' ClassName='mr-2' Onclick={ () => props.ClientMudo?.(new Clients(name , +Age, img.name,id))}>
                 {id ? 'Altera' : 'Salvar'}
                 
             </Button>

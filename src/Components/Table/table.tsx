@@ -17,6 +17,7 @@ export default function Table(props: propsTable) {
                 <th className='text-left p-4'>Código</th>
                 <th className='text-left p-4'>Name</th>
                 <th className='text-left p-4'>Age</th>
+                <th className='text-left p-4'>Img</th>
                 {exibirAccoes ? <th className='p-4'>Acções</th> : false}
             </tr>
         )
@@ -32,6 +33,7 @@ export default function Table(props: propsTable) {
                     <td className='text-left p-4'>{clients.id}</td>
                     <td className='text-left p-4'>{clients.name}</td>
                     <td className='text-left p-4'>{clients.age}</td>
+                    <td className='text-left p-4'><img src={clients.img} alt='samara'/></td>
                     { exibirAccoes ? renderizarAccoes(clients) : false}
                 </tr>
             )

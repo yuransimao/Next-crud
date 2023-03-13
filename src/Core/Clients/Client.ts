@@ -2,9 +2,9 @@ export default class Clients {
     #id : string
     #name : string
     #age : number 
-    #img: string
+    #img: any
     
-    constructor(name: string, age: number, img:string, id : string = null){
+    constructor(name: string, age: number, img:any, id : string = null){
         this.#id = id
         this.#name = name
         this.#age = age 
